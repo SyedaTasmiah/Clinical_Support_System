@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scroll Test</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+    <style>
+        /* Test the same CSS fixes */
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        #app {
+            min-height: 100vh;
+        }
+        
+        .main-content {
+            padding-bottom: 50px;
+        }
+        
+        .wrap-content {
+            min-height: calc(100vh - 120px);
+            padding-bottom: 30px;
+        }
+        
+        .test-section {
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="main-content">
+            <div class="wrap-content container">
+                <h1>Scroll Test Page</h1>
+                <p>This page tests the scrolling functionality implemented in manage-schedule.php</p>
+                
+                <div class="test-section" style="background-color: #f8f9fa;">
+                    <h3>Section 1</h3>
+                    <p>This is the first section. The page should scroll properly to show all content.</p>
+                </div>
+                
+                <div class="test-section" style="background-color: #e9ecef;">
+                    <h3>Section 2</h3>
+                    <p>This is the second section. Testing scrolling behavior.</p>
+                </div>
+                
+                <div class="test-section" style="background-color: #dee2e6;">
+                    <h3>Section 3</h3>
+                    <p>This is the third section. The scroll should work smoothly.</p>
+                </div>
+                
+                <div class="test-section" style="background-color: #ced4da;">
+                    <h3>Section 4</h3>
+                    <p>This is the fourth section. Testing end-of-page scrolling.</p>
+                </div>
+                
+                <div class="test-section" style="background-color: #adb5bd;">
+                    <h3>Section 5 - End of Page</h3>
+                    <p>This is the last section. You should be able to scroll to see this completely.</p>
+                    <button class="btn btn-primary" onclick="scrollToTop()">Scroll to Top</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="btn btn-primary" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none; border-radius: 50%; width: 50px; height: 50px;">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+    
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script>
+        function scrollToTop() {
+            $('html, body').animate({scrollTop: 0}, 600);
+        }
+        
+        $(document).ready(function() {
+            // Scroll to top button functionality
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#scrollToTop').fadeIn();
+                } else {
+                    $('#scrollToTop').fadeOut();
+                }
+            });
+            
+            $('#scrollToTop').click(function() {
+                scrollToTop();
+                return false;
+            });
+            
+            // Test auto-scroll to bottom
+            setTimeout(function() {
+                $('html, body').animate({
+                    scrollTop: $(document).height()
+                }, 2000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
