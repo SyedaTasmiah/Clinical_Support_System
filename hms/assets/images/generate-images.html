@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .image-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .image-container {
+            width: 400px;
+            height: 300px;
+            border: 2px solid #333;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .patients-bg {
+            background: linear-gradient(135deg, #10b981, #06b6d4);
+        }
+        .doctors-bg {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+        .admin-bg {
+            background: linear-gradient(135deg, #ef4444, #f59e0b);
+        }
+        .download-btn {
+            background: #4f46e5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .download-btn:hover {
+            background: #3730a3;
+        }
+        .instructions {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #0288d1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HMS Authentication Placeholder Images</h1>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <p>This page generates placeholder images for the HMS authentication system. To create actual images:</p>
+            <ol>
+                <li>Right-click on each image below</li>
+                <li>Select "Save image as..."</li>
+                <li>Save with the appropriate filename (patients.jpg, doctors.jpg, admin.jpg)</li>
+                <li>Place the images in the hms/assets/images/ directory</li>
+            </ol>
+            <p><strong>Note:</strong> For production use, replace these with actual professional medical images.</p>
+        </div>
+
+        <div class="image-section">
+            <h2>Patients Image (patients.jpg)</h2>
+            <p>This should be a medical-themed image representing patients and healthcare consumers.</p>
+            <div class="image-container patients-bg">
+                PATIENTS<br>
+                Healthcare<br>
+                Medical Care
+            </div>
+            <p>Recommended: Image of patients in a medical setting, healthcare symbols, or medical professionals helping patients.</p>
+        </div>
+
+        <div class="image-section">
+            <h2>Doctors Image (doctors.jpg)</h2>
+            <p>This should be a medical-themed image representing healthcare professionals and doctors.</p>
+            <div class="image-container doctors-bg">
+                DOCTORS<br>
+                Medical<br>
+                Healthcare
+            </div>
+            <p>Recommended: Image of doctors in medical settings, medical equipment, or healthcare professionals at work.</p>
+        </div>
+
+        <div class="image-section">
+            <h2>Admin Image (admin.jpg)</h2>
+            <p>This should be a professional image representing system administration and management.</p>
+            <div class="image-container admin-bg">
+                ADMIN<br>
+                System<br>
+                Management
+            </div>
+            <p>Recommended: Image of administrative settings, office environments, or professional business settings.</p>
+        </div>
+
+        <div class="instructions">
+            <h3>Image Requirements:</h3>
+            <ul>
+                <li><strong>Format:</strong> JPG/JPEG</li>
+                <li><strong>Dimensions:</strong> Minimum 800x600px, recommended 1200x800px</li>
+                <li><strong>Style:</strong> Professional, medical-themed, high contrast for text overlay</li>
+                <li><strong>Content:</strong> Relevant to each role (patients, doctors, admin)</li>
+                <li><strong>License:</strong> Ensure you have rights to use the images</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h3>Alternative Sources:</h3>
+            <p>For professional images, consider:</p>
+            <ul>
+                <li>Stock photo websites (Shutterstock, iStock, Adobe Stock)</li>
+                <li>Free stock photo sites (Unsplash, Pexels, Pixabay)</li>
+                <li>Medical stock photo collections</li>
+                <li>Professional photography services</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add click handlers for better UX
+        document.querySelectorAll('.image-container').forEach(container => {
+            container.addEventListener('click', function() {
+                alert('Right-click and select "Save image as..." to download this placeholder image.');
+            });
+        });
+    </script>
+</body>
+</html>
